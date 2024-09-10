@@ -10,7 +10,15 @@ In the README of this repository, there are instructions that explain how to wor
 
 This lab is going to walk you through the steps of submitting a lab (i.e. creating a pull request). This way, when it comes time to submit an assignment or create a pull request within your group, you've already been through the process at least once. Consder this lab a practice run.
 
-First, create a new branch in your repository and name it "lab-1":
+Before starting this lab, make sure you are in your local repository. You can either open VSCode and select the project, or use the command line shortcut:
+```bash
+# cd = change directory
+# your path may be slightly different depending on where you put your code
+cd cmpt221
+code .
+```
+
+Then, create a new branch in your repository and name it "lab-1":
 ```bash
 # create a new branch and switch to it
 git checkout -b "lab-1"
@@ -43,6 +51,9 @@ git push --set-upstream origin lab-1
 git push -u origin lab-1
 ```
 
-Once you have pushed your new file and you're ready to submit it, go to your `cmpt221` repository and click `Pull requests` in the top menu bar. Click `New pull request`. Keep the `base:main`, and select the branch you'd like to compare: `compare:lab-1`. Then click `Create pull request`. Add a title and a description, and click `Create pull request`. Once the pull request is created, add `profphip` as a reviewer, copy the link to your pull request, and submit it under `Lab 1` in Brightspace. 
+Once you have pushed your new file and you're ready to submit it, go to your `cmpt221` repository and click `Pull requests` in the top menu bar. Click `New pull request`. Make sure your OWN project is selected (not mine) and keep the `base:main`, and select the branch you'd like to compare: `compare:lab-1`. Then click `Create pull request`. Add a title and a description, and click `Create pull request`. 
 
-I will leave comments on your lab in the PR and your lab grade will be available in Brightspace.
+![Alt text](pr.png)
+
+
+Once the pull request is created, add `profphip` as a reviewer, copy the link to your pull request, and submit it under `Lab 1` in Brightspace. I will leave comments on your lab in the PR and your lab grade will be available in Brightspace.
