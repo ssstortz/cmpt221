@@ -1,10 +1,23 @@
 ## Lab #2 - Pip & Virtual Environments
 ### Pre-Lab
-Open your `cmpt221` repository in VSCode and open your terminal. Please refer to README.md for instructions on how to do this. 
-
 **IMPORTANT:** To complete this lab, Windows users will need to install Python if it is not already installed: https://www.python.org/downloads/
 
-**Note**: If you are a Windows user, I strongly recommend using bash/git bash instead of powershell.
+1. Open your `cmpt221` repository in Github and click `sync fork` > `update branch`
+
+2. Open your `cmpt221` repository in VSCode and open your terminal. Please refer to README.md for instructions on how to do this. 
+3. In your terminal, issue a git switch to switch to the main branch:
+    ```bash
+    # switch to main branch
+    git switch main
+    ```
+4. Issue a git pull to pull any changes from your remote repository into your local repository
+    ```bash
+    git pull --no-edit
+    ```
+5. Create a branch for lab 2
+    ```bash
+    git checkout -b "lab-2" 
+    ```
 
 ### Lab
 **PIP**: Pip is installed with Python and enables us to install packages in our programs that aren't already included with Python by default. When you install packages with Pip, they're installed _globally_, which means they are available to all the projects you create _on your computer_.
@@ -42,10 +55,10 @@ python3 -m pip install virtualenv
 python3 -m pip install --user virtualenv
 ```
 
-**IMPORTANT:** You need to be in the Lab-2 directory because that is where we want to virtual environment to be created. In your terminal, navigate to your Lab-2 directory using the `cd` command. You can issue the `pwd` command to verify you're in the right directory.
+**IMPORTANT:** You need to be in the lab-2 directory because that is where we want to virtual environment to be created. In your terminal, navigate to your Lab-2 directory using the `cd` command. You can issue the `pwd` command to verify you're in the right directory.
 ```bash
 # change directory
-cd lab-2
+cd labs/lab-2
 # confirm directory
 pwd
 ```
@@ -63,10 +76,23 @@ Notice the period before the word `venv`? This means the directory is hidden. Yo
 # activate venv
 # mac
 . .venv/bin/activate
-# windows (bash)
-source venv\scripts\activate
+
+# windows
+# note: if a command doesn't work, try the next one
+source .venv/Scripts/activate
+# or 
+.venv/Scripts/activate.bat
+# or (works in powershell - switch to powershell instead of bash
+# & make sure you cd /labs/lab-2)
+.venv/Scripts/activate.ps1
 ```
-Once you have activated your virtual environment, install the following packages using pip:
+Once you have activated your virtual environment, you should see a (.venv) in your command line like so:
+```bash
+(.venv) calistaphippen@calistas-mac lab-2 % 
+```
+
+
+install the following packages using pip:
 
 ```bash
 # flask package
@@ -87,6 +113,13 @@ pip install click
 
 Then issue a `pip list` and make sure you see your newly installed packages in the list. 
 
+```bash
+# list pip packages
+python3 -m pip list
+# or
+pip list
+```
+
 To share your virtual environment (and submit this lab for a grade), make sure you are still in the `lab-2` directory and issue a `pip freeze`. If you are not in the right directory, you will export all of your installed packages, not just the ones in your virtual environment.
 ```bash
 # store venv configurations
@@ -104,9 +137,18 @@ Deactivate the virtual environment using the `deactivate` command, then issue an
 ```bash
 # deactivate venv
 deactivate
+# or
+.venv/Scripts/deactivate.bat
 ```
 If all has gone well, you should notice that upon deactivating your virtual environment, you no longer see the packages you just installed.
 
-Once you have completed this lab, push your work to Github, open a pull request, assign me as a reviewer, and copy/paste the link to the pull request in Brightspace. Your `.venv` directory will not be pushed to git because of our `.gitignore`, but your `requirements.txt` file will be.
+Once you have completed this lab, push your work to Github. Note: Your `.venv` directory will not be pushed to git because of our `.gitignore`, but your `requirements.txt` file will be.
+```bash
+git add .
+git commit -m "completed lab 2"
+git push --set-upstream origin lab-2
+# or
+git push
+```
 
-I will leave comments on your lab in the PR and your lab grade will be available in brightspace.
+Then, open a pull request, assign me as a reviewer, and copy/paste the link to the pull request in Brightspace. I will leave comments on your lab in the PR and your lab grade will be available in brightspace.
