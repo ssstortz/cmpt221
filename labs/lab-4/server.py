@@ -52,24 +52,28 @@ with app.app_context():
     # LAB 4 --------------------------------------------------
 
     # # write a query to insert 3 records into the Courses table
-    # query_1 = """ """
+    # query_1 = """INSERT INTO COURSES (NAME, COURSEID, PROFESSORID)
+    VALUES('SD2', 'SD123','CP456'), ('DBMGMNT','DB321','DS123'), ('DC','DC987','BZ789');"""
     # db.session.execute(text(query_1))
     # db.session.commit()
 
     # # write a query to select all records from the Courses table
-    # query_2 = """ """
+    # query_2 = """SELECT *
+    FROM COURSES """
     # courses = db.session.execute(text(query_2))
     # print(f"\n\n----------- Courses Table")
     # for course in courses:
     #     print(course)
 
     # # write a query to update 1 record in the Courses table
-    # query_3 = """ """
+    # query_3 = """UPDATE COURSES
+    SET NAME = 'SoftwareDevelopment2'
+    WHERE COURSEID = SD123 """
     # db.session.execute(text(query_3))
     # db.session.commit()
 
     # # write a query to delete 1 record in the Courses table
-    # query_4 = """ """
+    # query_4 = """DELETE FROM COURSES WHERE NAME= 'DC';"""
     # db.session.execute(text(query_4))
     # db.session.commit()
 
