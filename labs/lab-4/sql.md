@@ -57,7 +57,7 @@ Almost all of the code in this lab is the same as the code in lab 3. The only di
 
 ```bash
 # sql query
-query = """ """
+a
 # runs the query locally
 db.session.execute(text(query))
 # makes the changes in postgres
