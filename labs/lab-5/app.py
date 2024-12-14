@@ -8,6 +8,14 @@ from db.server import app
 def index():
     return render_template("index.html")
 
+@app.route('/Secomd')
+def Secomd():
+    return render_template("Secomd.html")
+
+@app.route('/Threeth')
+def Threeth():
+    return render_template("Threeth.html")
+
 if __name__ == "__main__":
     # debug refreshes your application with your new changes every time you save
     app.run(debug=True)
