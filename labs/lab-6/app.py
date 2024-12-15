@@ -14,7 +14,7 @@ def index():
 
 @app.route('/signup', methods=['GET','POST'])
 def signup():
-   # if request.method == 'POST':
+    if request.method == 'POST':
     #    query = f"""INSERT INTO "Users" ("FirstName", "LastName", "Email", "PhoneNumber", "Password")
   #      VALUES ('{request.form["FirstName"]}',
    #             '{request.form["LastName"]}',
@@ -28,11 +28,33 @@ def signup():
             db.session.execute(query)
             db.session.commit()
 
-        return render_template('signup.html')
+        return redirect(url_for('index'))
+    
+    return render_template('signup.html')
+
 
 @app.route('/login', methods=['GET','POST'])
 def login():
+    if request.method == 'POST':
+        email = request.form['Email']
+        password = request.form['Password']
+        #I found the following with some googling because I was stuck... I sorta understand it but not fully.. I feel like there's probably a more simple way
+        with app.app_context():
+            stmt = select(User).where(User.Email == email)
+            result = db.session.execute(stmt).first()
+
+        if result:
+            user = result [0]
+            if user.Password == password:
+                return redirect(url_for('index'))
+            else:
+                error = "Incorrect password. Please try again."
+        else:
+            error = "No email found. Please try again."
+
+        return render_template('login.html', error = error)
     return render_template('login.html')
+
 
 @app.route('/users', methods=['GET','POST'])
 def users():
