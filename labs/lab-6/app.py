@@ -38,7 +38,7 @@ def login():
     if request.method == 'POST':
         email = request.form['Email']
         password = request.form['Password']
-        #I found the following with some googling because I was stuck... I sorta understand it but not fully.. I feel like there's probably a more simple way
+        #I found the following with some googling because I was stuck... I sorta understand it but not fully.. I feel like there's probably a more simple way. 
         with app.app_context():
             stmt = select(User).where(User.Email == email)
             result = db.session.execute(stmt).first()
@@ -51,7 +51,7 @@ def login():
                 error = "Incorrect password. Please try again."
         else:
             error = "No email found. Please try again."
-
+#logic-wise i know this should work but I cannot figure out why its not working for me for the life of me. 
         return render_template('login.html', error = error)
     return render_template('login.html')
 

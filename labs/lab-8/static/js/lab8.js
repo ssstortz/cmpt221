@@ -2,17 +2,25 @@
 /* In-Class Exercises                                                                                           */
 /****************************************************************************************************************/
 /* 1. create an array called "fruits" and assign the values "Strawberry", "Raspberry", and "Apple" to it         */
-// add code here
+// const fruits = ["Strawberry", "Raspberry", "Apple"];
+
+
 
 /* 2. add two more fruits to the "fruits" array using the correct array method                                   */
-// add code here
+// fruits.push("Banana", "Mango");
 
 /* 3. sort the fruits array alphabetically using the correct array method                                        */
-// add code here
+// const fruits = ["Strawberry", "Raspberry", "Apple", "Banana", "Mango"];
+    //fruits.sort();
 
 /* 4. create a function called printFruit that prints each item in the fruits array to the console              */
 /*    and call the printFruit function                                                                          */
-// add code here
+// function printFruit() {
+   // fruits.forEach(function(fruit) {
+      //  console.log(fruit);
+  //  });
+//}
+//printFruit();
 
 /* 5. create a fruit class that has three properties: name, color, and season and one method: printFruit()      */
 /*    that prints all three properties of the fruit to the console. Then, create 3 fruit objects and print      */
